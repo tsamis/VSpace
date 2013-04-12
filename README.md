@@ -1,11 +1,18 @@
 VSpace
 ======
+
+
 VSpace is a 3 dimensional drawing tool for Designers. 
 Unlike traditional CAD systems that work primarily by representing boundaries (Breps), 
 VSpacederives form by the direct representation and manipulation of material properties in space(Preps).
 In this Sense this tool allows the designer to treat Form and Material simultaneously in the same design environment.
 
 Currently modeling a more precise control system and working on adding more functionality to the tool.
+
+Download the latest version <a href="https://sourceforge.net/projects/vspace/files/latest/download?source=files">
+  here
+</a>
+
 
 ###External library credits
 To make this work, we used several 3rd party libraries, which we commited to /lib/ folder:
@@ -18,3 +25,4 @@ To make this work, we used several 3rd party libraries, which we commited to /li
 ###License
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
 To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/.
+
