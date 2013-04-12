@@ -53,21 +53,27 @@ import java.awt.EventQueue;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
-/*
- * This class handles the creation of the BZ grid. All the parameters
- * related to the creation and visualization are also in this class.
+/**
+ * 
+ * This class is the Applicatio itself, it handles the creation of the VSpace Grid. And contains all the 
+ * callbacks for the graphic user interface. 
+ * 
+ * All the simulation parameters are also in this class. It contains the Setup,
+ * and animation loop. (Update->Draw)
+ * 
+ * Important: Most of the functions inside of this class are callbacks used by
+ * the Interface.
  * 
  */
 public class BZEclipse extends PApplet implements ComponentListener{
 	
 	public BZEclipse() {
-		
+		//TODO: Is it necesary to set the look and feel again?
 		try{
 			UIManager.setLookAndFeel(
 		            UIManager.getSystemLookAndFeelClassName()
 		     );
-			//BZFrame frame = new BZFrame();
-			//frame.setVisible(true);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -75,8 +81,10 @@ public class BZEclipse extends PApplet implements ComponentListener{
 	}
 	String pattern ="###.##";
 	DecimalFormat formater = new DecimalFormat(pattern);
-   
+	
+	//A Command queue to apply them in order
 	Queue<Command> pendingCommands;
+	
 	Stack<UndoableCommand> cleanupCommands;
 	ArrayList<BooleanOperation> booleanOperations;
 	int newX=30,newY=30,newZ=2;
@@ -87,7 +95,6 @@ public class BZEclipse extends PApplet implements ComponentListener{
 	public int interface_w=200;
 	public float speedvar = 1;
 	public float speeddec = 0;
-	//TODO make ambient buttons
 	Boolean offsetA=false, offsetB=false,offsetC=false;
 	float ambienceValue,shininessValue,specularValue,ambientlight;
 	Voxel[] vox; 
